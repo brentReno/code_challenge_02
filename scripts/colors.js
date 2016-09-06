@@ -11,11 +11,8 @@ $(document).ready(function(){
   //Create red div on click
   $('[data-color="red"]').on('click', function(){
     console.log('The red button was clicked');
-    //create red div
-    var redDiv='<div class= "color-cube red"></div>';
-    //append red div to the container
-    $('.container').append(redDiv);
-    //incrament red clicks
+    //create red div and have it fade in
+    $('<div class= "color-cube red"></div>').hide().appendTo('.container').fadeIn('slow)');
     redClicks++;
     console.log('redClicks:', redClicks);
     //update total red paragraph
@@ -24,10 +21,8 @@ $(document).ready(function(){
   //Create blue div on click
   $('[data-color="blue"]').on('click', function(){
     console.log('The blue button was clicked');
-    //create blue div
-    var blueDiv='<div class= "color-cube blue"></div>';
-    //append blue div to the container
-    $('.container').append(blueDiv);
+    //create blue div and fade it in
+    $('<div class= "color-cube blue"></div>').hide().appendTo('.container').fadeIn('slow');
     //incrament blue clicks
     blueClicks++;
     console.log('blueClicks:', blueClicks);
@@ -37,27 +32,23 @@ $(document).ready(function(){
   //create yellow div on click
   $('[data-color="yellow"]').on('click', function(){
     console.log('The yellow button was clicked');
-    //create yellow div
-    var yellowDiv='<div class= "color-cube yellow"></div>';
-    //append yellow div to the container
-    $('.container').append(yellowDiv);
+    //create yellow div and fade it in
+    $('<div class= "color-cube yellow"></div>').hide().appendTo('.container').fadeIn('slow');
     //incrament yellow clicks
     yellowClicks++;
-    console.log('redClicks:', yellowClicks);
+    console.log('yellowClicks:', yellowClicks);
     //update total yellow paragraph
-    $('#yellow').html('Total red: ' + yellowClicks);
+    $('#yellow').html('Total yellow: ' + yellowClicks);
   });
   //create green div on click
   $('[data-color="green"]').on('click', function(){
     console.log('The green button was clicked');
-    //create green div
-    var greenDiv='<div class= "color-cube green"></div>';
-    //append red div to the container
-    $('.container').append(greenDiv);
-    //incrament red clicks
+    //create green div and fade it in
+    $('<div class= "color-cube green"></div>').hide().appendTo('.container').fadeIn('slow');
+    //incrament green clicks
     greenClicks++;
-    console.log('redClicks:', greenClicks);
-    //update total red paragraph
+    console.log('greenClicks:', greenClicks);
+    //update total green paragraph
     $('#green').html('Total green: ' + greenClicks);
   });
 
