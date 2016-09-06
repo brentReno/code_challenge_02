@@ -24,14 +24,41 @@ $(document).ready(function(){
   //Create blue div on click
   $('[data-color="blue"]').on('click', function(){
     console.log('The blue button was clicked');
+    //create blue div
+    var blueDiv='<div class= "color-cube blue"></div>';
+    //append blue div to the container
+    $('.container').append(blueDiv);
+    //incrament blue clicks
+    blueClicks++;
+    console.log('blueClicks:', blueClicks);
+    //update total blue paragraph
+    $('#blue').html('Total blue: ' + blueClicks);
   });
   //create yellow div on click
   $('[data-color="yellow"]').on('click', function(){
     console.log('The yellow button was clicked');
+    //create yellow div
+    var yellowDiv='<div class= "color-cube yellow"></div>';
+    //append yellow div to the container
+    $('.container').append(yellowDiv);
+    //incrament yellow clicks
+    yellowClicks++;
+    console.log('redClicks:', yellowClicks);
+    //update total yellow paragraph
+    $('#yellow').html('Total red: ' + yellowClicks);
   });
   //create green div on click
   $('[data-color="green"]').on('click', function(){
     console.log('The green button was clicked');
+    //create green div
+    var greenDiv='<div class= "color-cube green"></div>';
+    //append red div to the container
+    $('.container').append(greenDiv);
+    //incrament red clicks
+    greenClicks++;
+    console.log('redClicks:', greenClicks);
+    //update total red paragraph
+    $('#green').html('Total green: ' + greenClicks);
   });
 
 });
