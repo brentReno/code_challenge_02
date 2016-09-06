@@ -17,7 +17,7 @@ $(document).ready(function(){
     console.log('redClicks:', redClicks);
     //update total red paragraph
     $('#red').html('Total red: ' + redClicks);
-  });
+  });// end red on click
   //Create blue div on click
   $('[data-color="blue"]').on('click', function(){
     console.log('The blue button was clicked');
@@ -28,7 +28,7 @@ $(document).ready(function(){
     console.log('blueClicks:', blueClicks);
     //update total blue paragraph
     $('#blue').html('Total blue: ' + blueClicks);
-  });
+  });// end blue on click
   //create yellow div on click
   $('[data-color="yellow"]').on('click', function(){
     console.log('The yellow button was clicked');
@@ -39,7 +39,7 @@ $(document).ready(function(){
     console.log('yellowClicks:', yellowClicks);
     //update total yellow paragraph
     $('#yellow').html('Total yellow: ' + yellowClicks);
-  });
+  });// end yellow on click
   //create green div on click
   $('[data-color="green"]').on('click', function(){
     console.log('The green button was clicked');
@@ -50,6 +50,31 @@ $(document).ready(function(){
     console.log('greenClicks:', greenClicks);
     //update total green paragraph
     $('#green').html('Total green: ' + greenClicks);
-  });
+  });//end green on click
+  //Remove Cubes and decrament total
+  $('body').on('click', ".color-cube", function(){
+      console.log('clicking a cube');
+      //fade out and remove color block
+      $(this).fadeOut('300', function(){
+        $(this).remove();
+        //decrament color counter
+          if($(this).attr('class') == "color-cube red"){
+           redClicks--;
+           $('#red').html('Total red: ' + redClicks);
+         }
+          if($(this).attr('class') == "color-cube blue"){
+           blueClicks--;
+           $('#blue').html('Total blue: ' + blueClicks);
+         }
+          if($(this).attr('class') == "color-cube yellow"){
+          yellowClicks--;
+          $('#yellow').html('Total yellow: ' + yellowClicks);
+          }
+          if($(this).attr('class') == "color-cube green"){
+          greenClicks--;
+          $('#green').html('Total green: ' + greenClicks);
+        }
+      });//end conditionals
+      });//end fade out and remove
 
-});
+});// end on ready
